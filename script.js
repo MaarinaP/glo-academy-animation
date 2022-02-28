@@ -79,18 +79,3 @@ circle2.addEventListener("click", () => {
     circle2.style.left = 0;
     circle2.style.top = 0;
   });
-
-  // console.log(field);
-
-  // field.addEventListener("click", () => {
-    
-  //   let ryhm = () => {
-  //     let arr = ["Я на", "солнышке", "лежу,", "Я на", "солнышко", "гляжу…"];
-  //     for (let word of arr) {
-  //         text3.textContent = word;
-  //     }
-  //   };
-
-  //   setTimeout(ryhm(), 5000);
-    
-  // });
