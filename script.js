@@ -17,65 +17,65 @@ let idInterval;
 let idInterval2;
 
 const animateCircle1 = () => {
-    firstCount++;
-    idInterval = requestAnimationFrame(animateCircle1);
-    if(firstCount < 50) {
-      circle1.style.left = firstCount + "px";  
-    } else if (firstCount < 200) {
-      circle1.style.left = firstCount * 1.5 + "px";
-      circle1.style.backgroundColor = "black";
-      text1.style.color = "white";
-    } else if (firstCount < 400) {
-      circle1.style.left = firstCount * 3 + "px";
-      circle1.style.backgroundColor = "#992600";
-      text1.style.color = "pink";
-    } else {
-        cancelAnimationFrame(idInterval);
-    }
+  firstCount++;
+  idInterval = requestAnimationFrame(animateCircle1);
+  if(firstCount < 50) {
+    circle1.style.left = firstCount + "px";  
+  } else if (firstCount < 200) {
+    circle1.style.left = firstCount * 1.5 + "px";
+    circle1.style.backgroundColor = "black";
+    text1.style.color = "white";
+  } else if (firstCount < 400) {
+    circle1.style.left = firstCount * 3 + "px";
+    circle1.style.backgroundColor = "#992600";
+    text1.style.color = "pink";
+  } else {
+    cancelAnimationFrame(idInterval);
+  }
 };
 
 const animateCircle2 = () => {
-    secondCount++;
-    idInterval2 = requestAnimationFrame(animateCircle2);
-    if(secondCount < 100) {
-        circle2.style.left = secondCount * 3 + "px";
-    } else if (secondCount < 200) {
-        circle2.style.top = secondCount * 3 + "px";
-    } else {
-        cancelAnimationFrame(idInterval2);
-    }
+  secondCount++;
+  idInterval2 = requestAnimationFrame(animateCircle2);
+  if(secondCount < 100) {
+    circle2.style.left = secondCount * 3 + "px";
+  } else if (secondCount < 200) {
+    circle2.style.top = secondCount * 3 + "px";
+  } else {
+    cancelAnimationFrame(idInterval2);
+  }
 };
 
 circle1.addEventListener("click", () => {
-    text1.textContent = "Catch me";
-    if(active) {
-        cancelAnimationFrame(idInterval);
-        active = false;
-    } else {
-        text1.textContent = "Stop me";
-        idInterval = requestAnimationFrame(animateCircle1);
-        active = true;
-    }
+  text1.textContent = "Catch me";
+  if(active) {
+    cancelAnimationFrame(idInterval);
+    active = false;
+  } else {
+    text1.textContent = "Stop me";
+    idInterval = requestAnimationFrame(animateCircle1);
+    active = true;
+  }
 });
 
 circle2.addEventListener("click", () => {
-    text2.textContent = "Catch me";
-    if(active2) {
-      cancelAnimationFrame(idInterval2);
-      active2 = false;
-    } else {
-      text2.textContent = "Stop me";
-      idInterval2 = requestAnimationFrame(animateCircle2);
-      active2 = true;
-    }
-  });
+  text2.textContent = "Catch me";
+  if(active2) {
+    cancelAnimationFrame(idInterval2);
+    active2 = false;
+  } else {
+    text2.textContent = "Stop me";
+    idInterval2 = requestAnimationFrame(animateCircle2);
+    active2 = true;
+  }
+});
 
-  reset.addEventListener("click", () => {
-    text1.textContent = "Click me";
-    text2.textContent = "Click me";
-    circle1.style.backgroundColor = "#ffdb4d";
-    text1.style.color = "#992600";
-    circle1.style.left = 0;
-    circle2.style.left = 0;
-    circle2.style.top = 0;
-  });
+reset.addEventListener("click", () => {
+  text1.textContent = "Click me";
+  text2.textContent = "Click me";
+  circle1.style.backgroundColor = "#ffdb4d";
+  text1.style.color = "#992600";
+  circle1.style.left = 0;
+  circle2.style.left = 0;
+  circle2.style.top = 0;
+});
